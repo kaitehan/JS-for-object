@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(uname,age){
+
+            this.uname = uname;
+            this.age = age;
+        }
+        var that;
+        Star.prototype.sing = function() {
+            console.log(11111);
+            that = this;
+        }
+        var ldh = new Star('刘德华',12);
+        // 1.在构造函数中，里面的this指向的是实例对象 ldh
+        ldh.sing();
+        console.log(
+            ldh
+        );
+            console.log(that ===ldh);
+        // 2.原型对象函数里面的this  指向的是 实例对象 ldh
+    </script>
+</body>
+</html>

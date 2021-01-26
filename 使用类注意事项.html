@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        var that;
+        class Star {
+            constructor(uname){
+                // constructor里面的this指向实例对象
+                this.uname = uname;
+                that = this;
+                this.btn = document.querySelector('button');
+                this.btn.onclick = this.sing;
+            }
+            sing() {
+                // 方法里的this指向方法的调用者
+                // 解决方案： 使用全局变量调用实例对象的属性
+                console.log(that.uname);
+            }
+        }
+        var star = new Star('刘德华');
+        // 1. 在ES6中类没有变量提升，所以必须先定义类，才能通过对象实例化对象
+
+        // 2.类里面的共有的属性和方法一定要加this
+    </script>
+</body>
+</html>
